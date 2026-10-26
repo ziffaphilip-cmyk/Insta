@@ -1,6 +1,6 @@
 # Apricot Hour: reel house style
 
-Status: **DRAFT, awaiting approval.** Do not treat as binding until this line says APPROVED.
+Status: **APPROVED 2026-10-26.** Binding for every reel edit. Change only when the user asks.
 
 Learned from `references/ref-1.mp4`, `ref-2.mp4`, `ref-3.mp4` (lifestyle "day in the life" reels).
 Keep their storytelling habits; never copy their fonts, colours or text animations.
