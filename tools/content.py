@@ -117,6 +117,32 @@ def backlog():
             out.append("")
     BACKLOG.write_text("\n".join(out), encoding="utf-8")
     print(f"Wrote {BACKLOG.relative_to(ROOT.parent)} ({len(ideas)} ideas)")
+    idea_cards()
+
+
+def idea_cards():
+    """Write content/ideas.md: every idea as a readable card, for phones and previews."""
+    ideas = read(IDEAS)
+    fields = [("angle", "Angle"), ("onscreen_text", "On-screen title"), ("alt_overlay", "Alternative"),
+              ("audience", "For"), ("response", "Response"), ("objective", "Goal"), ("footage", "Footage"),
+              ("audio", "Audio"), ("caption", "Caption"), ("cta", "Call to action"), ("why", "Why post it"),
+              ("needs_her_story", "Needs from you")]
+    out = ["# Idea bank", "",
+           "_Generated from `ideas.csv` by `python3 tools/content.py backlog`. Edit the CSV, not this file._", ""]
+    for fmt, label in (("talking", "Talking reels"), ("overlay", "Text-overlay reels")):
+        out += [f"## {label}", ""]
+        for r in (r for r in ideas if r["format"] == fmt):
+            hook = r["hook_or_overlay"].replace("\n", "  \n> ")
+            out += [f"### {r['id']} · {r['title']}", "",
+                    f"`{r['pillar']}` · effort {r['effort']} · {r['status']}", "", f"> {hook}", ""]
+            for key, name in fields:
+                value = (r.get(key) or "").strip()
+                if value and value.lower() != "no":
+                    out.append(f"- **{name}:** {value.replace(chr(10), ' / ')}")
+            out.append("")
+    path = ROOT / "ideas.md"
+    path.write_text("\n".join(out), encoding="utf-8")
+    print(f"Wrote {path.relative_to(ROOT.parent)} ({len(ideas)} ideas)")
 
 
 def week(day=None):

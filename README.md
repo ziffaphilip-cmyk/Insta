@@ -10,6 +10,7 @@ github.com) or ask Claude to update it for you.
 |---|---|---|
 | `content/strategy.md` | Positioning, pillars, voice rules, posting rhythm, how to read stats | Claude, after we agree changes |
 | `content/ideas.csv` | **Master idea bank.** One row per idea, both formats | Both |
+| `content/ideas.md` | **Phone-friendly idea bank**: every idea as a readable card (generated from `ideas.csv`) | Nobody: regenerate it |
 | `content/backlog.md` | Readable list of unpublished ideas (generated from `ideas.csv`) | Nobody: regenerate it |
 | `content/calendar.csv` | Every scheduled post with date, format, filming needs, effort and status | Both |
 | `content/calendar/` | Readable monthly overview and the detailed weekly plan | Claude |
@@ -62,7 +63,7 @@ Run from the project folder (Claude can run these for you):
 
 ```bash
 python3 tools/content.py check          # validate the CSV files
-python3 tools/content.py backlog        # rebuild content/backlog.md
+python3 tools/content.py backlog        # rebuild content/backlog.md and content/ideas.md
 python3 tools/content.py week           # what's scheduled this week
 python3 tools/content.py week 2026-11-09
 python3 tools/content.py report         # performance summary from tracker.csv
