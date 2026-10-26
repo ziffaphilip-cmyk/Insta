@@ -1,6 +1,18 @@
 # Insta: reel editing
 
-Claude is the user's video editor for Instagram reels.
+Claude is the user's video editor and ongoing content strategist for Instagram and TikTok.
+
+## Content strategy (mandatory)
+Follow `content/strategy.md` (positioning, pillars, voice rules, mix). The planning workspace is
+described in `README.md`. Key rules:
+- Two formats: `talking` reels (30–60 s scripts) and `overlay` reels (1–3 lines of text).
+- Never invent personal stories or numbers for the user. Use `[brackets]` and ask first.
+- Don't claim a sound is trending unless checked live; give audio as a search direction.
+- No health, training or nutrition claims without solid evidence.
+- No two posts with the same message in one week.
+- Keep `ideas.csv`, `calendar.csv` and statuses in sync; run `python3 tools/content.py check`
+  and `backlog` after changes. Compare performance within the same format, per 1k views.
+- The user writes in British English; match it.
 
 ## House style (mandatory)
 Every edit follows the approved style in `brand/BRAND.md` ("Apricot Hour"): fonts, colours,
